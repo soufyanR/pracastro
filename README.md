@@ -5,6 +5,7 @@ correction tables, where the url is the url of the correction table and the time
 
 A working example:
 
+```
 finals_2000A_table_url = 'https://maia.usno.navy.mil/ser7/finals2000A.daily'
 leap_seconds_table_url = 'https://maia.usno.navy.mil/ser7/tai-utc.dat'
 
@@ -20,7 +21,7 @@ time_domain = [start_date + int(time_step) * timedelta(minutes=i) for i in
                
 DUT1_range = retrieve_dut1_values(finals_2000A_table_url, start_date, end_date)
 GPS_leap_second = time_domain_to_gps(leap_seconds_table_url, time_domain)
-
+```
 
 
 

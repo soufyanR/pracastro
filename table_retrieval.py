@@ -94,12 +94,7 @@ def time_domain_to_gps(url, time_domain):
     
     leap_seconds = [values[38:48] for values in response.text.split('\n')]
     current_leap_second = float(leap_seconds[-2])
-    GPS_time_domain = [(date + timedelta(seconds = current_leap_second)) for date in time_domain]
     
-    if not os.path.isfile(file_name): 
-        with open(file_name, 'w') as f:
-            f.write('\n'.join(leap_seconds))
-        f.close()
     
-    return GPS_time_domain
+    return current_leap_second
 
